@@ -25,6 +25,7 @@ import { ImageWithFallback } from "@/components/helpers/ImageWithFallback";
 // import { SimilarPlaceCard } from '@/components/SimilarPlaceCard';
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Detail() {
   const [isFavorited, setIsFavorited] = useState(false);
@@ -136,10 +137,10 @@ export default function Detail() {
             </div>
             <p className="mb-4 leading-relaxed text-muted-foreground">
               A magnificent example of Gothic architecture dating back to the
-              13th century, the Historic Cathedral stands as one of the city{"'"}s
-              most iconic landmarks. With its soaring spires, intricate stone
-              carvings, and stunning stained glass windows, this UNESCO World
-              Heritage site offers visitors a glimpse into medieval
+              13th century, the Historic Cathedral stands as one of the city
+              {"'"}s most iconic landmarks. With its soaring spires, intricate
+              stone carvings, and stunning stained glass windows, this UNESCO
+              World Heritage site offers visitors a glimpse into medieval
               craftsmanship and religious history.
             </p>
             <p className="leading-relaxed text-muted-foreground">
@@ -287,7 +288,7 @@ export default function Detail() {
                 <Star className="h-6 w-6 fill-yellow-400 text-yellow-400" />
                 <span className="text-2xl">{placeData?.get("rating")}</span>
                 <span className="text-muted-foreground">
-                ({placeData?.get("reviews")})
+                  ({placeData?.get("reviews")})
                 </span>
               </div>
             </div>
@@ -296,6 +297,14 @@ export default function Detail() {
             <div className="mb-6 space-y-2">
               {[5, 4, 3, 2, 1].map((rating) => (
                 <div key={rating} className="flex items-center gap-3">
+                  <div className="bg-green-400 rounded-4xl">
+                    <Image
+                      src={"/assets/verified-badge.svg"}
+                      alt="verified badge"
+                      width={25}
+                      height={25}
+                    />
+                  </div>
                   <span className="w-8 text-sm text-muted-foreground">
                     {rating} ★
                   </span>
