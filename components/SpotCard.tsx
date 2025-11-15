@@ -5,8 +5,8 @@ interface SpotCardProps {
   image: string;
   title: string;
   location: string;
-  rating: number;
-  reviews: number;
+  rating: string;
+  reviews: string;
 }
 
 export function SpotCard({ image, title, location, rating, reviews }: SpotCardProps) {
@@ -30,7 +30,7 @@ export function SpotCard({ image, title, location, rating, reviews }: SpotCardPr
       <div className="p-4">
         <div className="flex items-center gap-2">
           <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-          <span className="text-foreground">{rating.toFixed(1)}</span>
+          <span className="text-foreground">{parseFloat(rating).toFixed(1)}</span>
           <span className="text-sm text-muted-foreground">({reviews} reviews)</span>
         </div>
       </div>

@@ -37,8 +37,8 @@ export default function Detail() {
       <div className="relative">
         <div className="relative h-[300px] sm:h-[400px] lg:h-[500px]">
           <ImageWithFallback
-            src={placeData.get("image")}
-            alt={placeData.get("title")}
+            src={placeData.get("image")!}
+            alt={placeData.get("title")!}
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
@@ -136,7 +136,7 @@ export default function Detail() {
             </div>
             <p className="mb-4 leading-relaxed text-muted-foreground">
               A magnificent example of Gothic architecture dating back to the
-              13th century, the Historic Cathedral stands as one of the city's
+              13th century, the Historic Cathedral stands as one of the city{"'"}s
               most iconic landmarks. With its soaring spires, intricate stone
               carvings, and stunning stained glass windows, this UNESCO World
               Heritage site offers visitors a glimpse into medieval
@@ -285,9 +285,9 @@ export default function Detail() {
               </div>
               <div className="flex items-center gap-2">
                 <Star className="h-6 w-6 fill-yellow-400 text-yellow-400" />
-                <span className="text-2xl">{placeData.rating}</span>
+                <span className="text-2xl">{placeData?.get("rating")}</span>
                 <span className="text-muted-foreground">
-                  ({placeData.reviews})
+                  ({placeData?.get("reviews")})
                 </span>
               </div>
             </div>

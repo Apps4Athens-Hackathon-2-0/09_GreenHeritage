@@ -37,6 +37,7 @@ export default function Home() {
       title: "Jazz Festival 2025",
       date: "Nov 20-22",
       location: "City Park",
+      category: "Festival"
     },
     {
       id: "evt2",
@@ -45,6 +46,7 @@ export default function Home() {
       title: "Food & Wine Fair",
       date: "Nov 25",
       location: "Central Square",
+      category: "Cultural"
     },
     {
       id: "evt3",
@@ -53,6 +55,7 @@ export default function Home() {
       title: "Art Gallery Opening",
       date: "Dec 1",
       location: "Modern Museum",
+      category: "Cultural"
     },
   ];
 
@@ -63,16 +66,16 @@ export default function Home() {
         "https://images.unsplash.com/photo-1631656773931-dda2e0c51b26?w=800",
       title: "Historic Cathedral",
       location: "Old Town",
-      rating: 4.8,
-      reviews: 2341,
+      rating: "4.8",
+      reviews: "2341",
     },
     {
       id: "2",
       image: "https://images.unsplash.com/photo-1563273026-d342cef8f723?w=800",
       title: "City Museum",
       location: "Arts District",
-      rating: 4.7,
-      reviews: 1823,
+      rating: "4.7",
+      reviews: "1823",
     },
     {
       id: "3",
@@ -80,8 +83,8 @@ export default function Home() {
         "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
       title: "Mountain Viewpoint",
       location: "West Hills",
-      rating: 4.9,
-      reviews: 3102,
+      rating: "4.9",
+      reviews: "3102",
     },
   ];
   return (
