@@ -180,11 +180,15 @@ export default function Home() {
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {events.map((event) => (
-            <div
-              key={event.id}
-              // "detail", event)}
-            >
-              <EventCard {...event} />
+            <div key={event.id}>
+              <Link
+                href={{
+                  pathname: "/event/detail",
+                  query: new URLSearchParams(event).toString(),
+                }}
+              >
+                <EventCard {...event} />
+              </Link>
             </div>
           ))}
         </div>
@@ -205,10 +209,11 @@ export default function Home() {
           {popularSpots.map((spot) => (
             <div
               key={spot.id}
-              // onClick={() => navigateTo("detail", spot)}
               className="cursor-pointer"
             >
-              <SpotCard {...spot} />
+              <Link href={{pathname: '/poi/detail' ,query: new URLSearchParams(spot).toString()}}>
+                <SpotCard {...spot} />
+              </Link>
             </div>
           ))}
         </div>
